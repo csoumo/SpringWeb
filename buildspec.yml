@@ -1,5 +1,8 @@
 version: 0.2
 phases:
+  install:
+    runtime-versions:
+      java: corretto11
   pre_build:
     commands:
       - echo Logging into Amazon ECR started on `date`
@@ -8,8 +11,8 @@ phases:
       - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 101919673100.dkr.ecr.us-east-2.amazonaws.com
       - echo setting repository URI....
       - REPOSITORY_URI=101919673100.dkr.ecr.us-east-2.amazonaws.com/cicdpipeline
-      - echo setting image tag....
-      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
  build:
    commands:
      - echo building and tagging started image on `date`
