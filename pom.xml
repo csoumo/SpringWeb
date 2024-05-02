@@ -40,7 +40,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>home-care-exe</finalName>
+<!--        <finalName>home-care-exe</finalName>-->
     </build>
 
 </project>
