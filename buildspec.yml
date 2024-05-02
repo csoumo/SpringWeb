@@ -13,7 +13,7 @@ phases:
  build:
    commands:
      - echo building and tagging started image on `date`
-     - {print maven -version}
+     - '{print maven -version}'
      - echo running mvn clean install...
      - mvn clean install
      - echo building the Docker image...
