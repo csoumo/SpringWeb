@@ -1,7 +1,6 @@
 FROM maven:3.9.6 AS  build
 WORKDIR /app
 COPY pom.xml /app
-RUN mvn depenedency:resolve
 COPY . /app
 RUN mvn clean
 RUN mvn package -DskipTests -X
