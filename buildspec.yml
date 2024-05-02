@@ -12,10 +12,9 @@ phases:
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
  build:
    commands:
-     - codebuild-resume
      - echo building and tagging started image on `date`
      - echo running mvn clean install...
-#     - mvn clean install
+     - mvn clean install
      - echo building the Docker image...
      - docker build -t $REPOSITORY_URI:latest .
      - echo tagging the Docker image...
