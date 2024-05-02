@@ -2,7 +2,7 @@ version: 0.2
 phases:
  install:
     runtime-versions:
-      docker: 18
+      java: 17
  pre_build:
     commands:
       - echo Logging into Amazon ECR started on `date`
