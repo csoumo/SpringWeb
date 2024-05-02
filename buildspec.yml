@@ -17,8 +17,7 @@ phases:
      - echo running mvn clean install...
      - mvn clean install
      - echo building the Docker image...
-#     - docker build -t $REPOSITORY_URI:latest .
-     - docker build --file Dockerfile --tag $REPOSITORY_URI:$CODEBUILD_BUILD_ID .
+     - docker build -t $REPOSITORY_URI .
      - echo tagging the Docker image...
      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
  post_build:
