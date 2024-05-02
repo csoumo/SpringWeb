@@ -1,8 +1,5 @@
 version: 0.2
 phases:
-  install:
-    runtime-versions:
-      java: 17
  pre_build:
     commands:
       - echo Logging into Amazon ECR started on `date`
