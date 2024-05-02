@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.healthcure</groupId>
-    <artifactId>homecare</artifactId>
+    <artifactId>cicdpipeline</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>HealthCure</name>
+    <name>cicdpipeline</name>
     <description>HealthCure</description>
     <dependencies>
         <dependency>
