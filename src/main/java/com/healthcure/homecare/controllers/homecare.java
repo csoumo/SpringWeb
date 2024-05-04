@@ -14,7 +14,7 @@ public class homecare {
         return "Soumo test";
     }
 
-    @RequestMapping(method= RequestMethod.GET,  path="/id/")
+    @RequestMapping(method= RequestMethod.GET,  path="/{consumerId}")
     public ResponseEntity get(@PathVariable long consumerId) {
         return new ResponseEntity<>(HttpStatus.OK);
     }
